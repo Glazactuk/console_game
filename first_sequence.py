@@ -48,6 +48,20 @@ def change_letters() -> None:
     with open("todo.txt", "w", encoding="utf-8") as file:
         file.write("".join(todo))    
 
+#дохера замудррённая функция, изменяющая почти все буквы в todo.txt
+def hard_change() -> None:
+#открываем сам файл и считываем его, получая список из ВСЕХ букв
+    with open("todo.txt", "r", encoding="utf-8") as file:
+        todo: list[str] = list(file.read())
+
+    #цикл, который меняет случайные буквы в todo.txt на хз какие, сам уже запутался
+    for i in range(len(todo) - random.randint(2,10)):
+        todo[random.randint(0, len(todo)-1)] = chr(ord(todo[random.randint(0, len(todo)-1)]))
+
+    #записываем все изменения в todo.txt, параллельно обьединяя список букв в строку
+    with open("todo.txt", "w", encoding="utf-8") as file:
+        file.write("".join(todo))    
+
 
 #функция для сохранения нынешнего состаяния todo.txt
 def save() -> str:
@@ -84,8 +98,23 @@ write()
 
 output()
 
+write()
 
+output()
 
+save_2 = save()
+
+write()
+
+hard_change()
+
+output()
+
+reset(save_2)
+
+write()
+
+output()
 
 
 
