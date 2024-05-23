@@ -73,6 +73,10 @@ def reset(save) -> None:
     with open("todo.txt", "w", encoding="utf-8") as file:
         file.write(save)
 
+#модуль числа
+def abs(x):
+    return (x*x)**0.5
+
 
 output()
 
@@ -116,7 +120,22 @@ write()
 
 output()
 
+print('\n')
+x = 0.05
+for i in range(random.randint(50, 75)):
+    in_txt = "Пожалуйста, введите новую задачу:"
+    for i in in_txt:
+        print(i, end="")
+        time.sleep(x)
+    x= abs(x-0.0025)
 
+write()
+
+output()
+
+write()
+
+output()
 
 #1) сделать домашнюю работу
 #2) помыть посуду
