@@ -3,6 +3,10 @@ import random
 
 
 
+# def stress_test() -> bool:
+#     with open('todo.txt', "r", encoding="utf-8") as file:
+#         if file.readlines[-1] 
+
 #простая функция для вывода текста из документа todo.txt
 def output():
     with open("todo.txt", "r", encoding="utf-8") as file:
@@ -37,7 +41,7 @@ def change_letters() -> None:
         todo: list[str] = list(file.read())
 
     #цикл, который меняет случайные буквы в todo.txt на хз какие, сам уже запутался
-    for i in range(len(todo)-random.randint(45, 56)):
+    for i in range(random.randint(2,10)):
         todo[random.randint(0, len(todo)-1)] = chr(ord(todo[random.randint(0, len(todo)-1)]))
 
     #записываем все изменения в todo.txt, параллельно обьединяя список букв в строку
@@ -79,6 +83,7 @@ output()
 write()
 
 output()
+
 
 
 
